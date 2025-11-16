@@ -26,7 +26,7 @@ def parse_webpage(url):
     for tbody_tag in soup.find_all('table', class_='table'):
         header = tbody_tag.find('th').get_text(strip=True)
         description = []
-        for p_tag in tr_tag.find_all('p'):
+        for p_tag in tbody_tag.find_all('p'):
             description.append(p_tag.get_text(strip=True))
         
         info.append({
