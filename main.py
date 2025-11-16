@@ -5,6 +5,8 @@ def parse_webpage(url):
     """
     Fetch and parse a web page, extracting all links and titles.
     """
+    info = []
+
     response = requests.get(url)
     response.raise_for_status()  # raises error if request fails
 
