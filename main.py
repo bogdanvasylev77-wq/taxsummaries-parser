@@ -23,9 +23,8 @@ def parse_webpage(url):
     page_title = soup.title.string if soup.title else "No title found"
 
     # Extract all info
-    info = []
-    for tr_tag in soup.find_all('tbody'):
-        header = tr_tag.find('th').get_text(strip=True)
+    for tbody_tag in soup.find_all('table', class_='table'):
+        header = tbody_tag.find('th').get_text(strip=True)
         description = []
         for p_tag in tr_tag.find_all('p'):
             description.append(p_tag.get_text(strip=True))
