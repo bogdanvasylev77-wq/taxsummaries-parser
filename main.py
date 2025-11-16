@@ -38,8 +38,57 @@ def parse_webpage(url):
 
 
 if __name__ == "__main__":
-    url =  'https://taxsummaries.pwc.com/ukraine'
-    title, info = parse_webpage(url)
+    countries = [
+        'afghanistan', 'albania', 'algeria', 'andorra', 'angola', 'antigua and barbuda',
+        'argentina', 'armenia', 'australia', 'austria', 'azerbaijan',
+        'bahamas', 'bahrain', 'bangladesh', 'barbados', 'belarus', 'belgium', 'belize',
+        'benin', 'bhutan', 'bolivia', 'bosnia and herzegovina', 'botswana', 'brazil',
+        'brunei', 'bulgaria', 'burkina faso', 'burundi',
+        'cabo verde', 'cambodia', 'cameroon', 'canada', 'central african republic', 'chad',
+        'chile', 'china', 'colombia', 'comoros', 'congo', 'costa rica', "côte d'ivoire",
+        'croatia', 'cuba', 'cyprus', 'czechia',
+        'democratic republic of the congo', 'denmark', 'djibouti', 'dominica',
+        'dominican republic',
+        'ecuador', 'egypt', 'el salvador', 'equatorial guinea', 'eritrea', 'estonia',
+        'eswatini', 'ethiopia',
+        'fiji', 'finland', 'france',
+        'gabon', 'gambia', 'georgia', 'germany', 'ghana', 'greece', 'grenada', 'guatemala',
+        'guinea', 'guinea-bissau', 'guyana',
+        'haiti', 'honduras', 'hungary',
+        'iceland', 'india', 'indonesia', 'iran', 'iraq', 'ireland', 'israel', 'italy',
+        'jamaica', 'japan', 'jordan',
+        'kazakhstan', 'kenya', 'kiribati', 'kuwait', 'kyrgyzstan',
+        'laos', 'latvia', 'lebanon', 'lesotho', 'liberia', 'libya', 'liechtenstein',
+        'lithuania', 'luxembourg',
+        'madagascar', 'malawi', 'malaysia', 'maldives', 'mali', 'malta', 'marshall islands',
+        'mauritania', 'mauritius', 'mexico', 'micronesia', 'moldova', 'monaco', 'mongolia',
+        'montenegro', 'morocco', 'mozambique', 'myanmar',
+        'namibia', 'nauru', 'nepal', 'netherlands', 'new zealand', 'nicaragua', 'niger',
+        'nigeria', 'north korea', 'north macedonia', 'norway',
+        'oman',
+        'pakistan', 'palau', 'panama', 'papua new guinea', 'paraguay', 'peru',
+        'philippines', 'poland', 'portugal',
+        'qatar',
+        'romania', 'russia', 'rwanda',
+        'saint kitts and nevis', 'saint lucia', 'saint vincent and the grenadines',
+        'samoa', 'san marino', 'sao tome and principe', 'saudi arabia', 'senegal', 'serbia',
+        'seychelles', 'sierra leone', 'singapore', 'slovakia', 'slovenia',
+        'solomon islands', 'somalia', 'south africa', 'south korea', 'south sudan',
+        'spain', 'sri lanka', 'sudan', 'suriname', 'sweden', 'switzerland', 'syria',
+        'taiwan',  # not UN member but widely recognized
+        'tajikistan', 'tanzania', 'thailand', 'timor-leste', 'togo', 'tonga',
+        'trinidad and tobago', 'tunisia', 'turkey', 'turkmenistan', 'tuvalu',
+        'uganda', 'ukraine', 'united arab emirates', 'united kingdom', 'united states',
+        'uruguay', 'uzbekistan',
+        'vanuatu', 'vatican city', 'venezuela', 'vietnam',
+        'yemen',
+        'zambia', 'zimbabwe'
+    ]
+
+    for country in countries:
+        url =  'https://taxsummaries.pwc.com/' + country
+        print(url)
+        title, info = parse_webpage(url)
 
     print(f"Page Title: {title}\n")
     print("Links found on the page:")
