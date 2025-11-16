@@ -8,7 +8,14 @@ def parse_webpage(url):
     info = []
 
     response = requests.get(url)
-    response.raise_for_status()  # raises error if request fails
+    if (response.status_code == 404): # return not fpund for empty pages
+        page_title = url.rsplit('/', 1)[-1].capitalize() + ' - Overview'
+        info.append({
+            "header": 'not found',
+            "description": 'not found'
+        })
+
+        return page_title, info
 
     soup = BeautifulSoup(response.text, 'html.parser')
 
